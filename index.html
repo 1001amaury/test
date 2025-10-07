@@ -25,18 +25,19 @@
       position: relative;
       height: 100vh;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start; /* image plus basse */
       align-items: center;
       overflow: hidden;
       flex-direction: column;
+      padding-top: 20vh; /* espace depuis le haut */
     }
 
     .text-behind {
       position: absolute;
-      top: 25%;
+      top: 10%; /* un peu plus haut */
       font-size: 10vw;
       font-weight: 800;
-      color: rgba(255, 255, 255, 0.35);
+      color: #fff; /* texte blanc */
       z-index: 1;
       user-select: none;
       text-align: center;
@@ -51,6 +52,7 @@
       z-index: 2;
       border-radius: 10px;
       position: relative;
+      margin-top: 200px; /* image plus basse */
     }
 
     .image.visible {
