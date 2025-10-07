@@ -15,7 +15,7 @@
 
     body {
       background: #000;
-      color: white;
+      color: #fff;
       font-family: 'Montserrat', sans-serif;
       overflow-x: hidden;
       height: 200vh;
@@ -23,36 +23,36 @@
 
     .container {
       position: relative;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      overflow: hidden;
       flex-direction: column;
-      padding-top: 20vh;
+      padding-top: 15vh;
     }
 
     .text-behind {
       position: absolute;
-      top: 10%;
-      font-size: 10vw;
+      top: 5%;
+      font-size: clamp(4rem, 10vw, 10rem);
       font-weight: 800;
       color: #fff;
       z-index: 1;
       user-select: none;
       text-align: center;
       pointer-events: none;
+      padding: 0 10px;
     }
 
     .image {
-      width: 60%;
-      max-width: 800px;
+      width: 80%;
+      max-width: 600px;
       opacity: 0;
       transition: opacity 1.5s ease-out;
       z-index: 2;
       border-radius: 10px;
       position: relative;
-      margin-top: 150px; /* image un peu plus haute */
+      margin-top: 100px; /* plus adapté mobile */
     }
 
     .image.visible {
@@ -62,10 +62,28 @@
     .text-after {
       text-align: center;
       font-weight: 600;
-      font-size: 1.3rem;
-      margin-top: 60px;
-      letter-spacing: 2px;
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      margin-top: 40px;
+      letter-spacing: 1.5px;
       color: #fff;
+      padding: 0 10px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-top: 20vh;
+      }
+
+      .image {
+        width: 60%;
+        max-width: 800px;
+        margin-top: 150px;
+      }
+
+      .text-after {
+        margin-top: 60px;
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
@@ -88,3 +106,4 @@
   </script>
 </body>
 </html>
+
