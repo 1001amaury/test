@@ -5,62 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Je t'aime</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
-      height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      min-height: 100vh;
+      justify-content: flex-start;
       align-items: center;
-      background-color: black;
-      color: white;
-      overflow: hidden;
-      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 5vh 10px;
+      position: relative;
     }
 
-    .image {
-      width: 80%;
-      max-width: 400px;
+    .text-main {
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 800;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.3);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .image-container {
+      width: 100%;
+      max-width: 500px;
+      z-index: 2;
+      margin-top: 50px; /* image un peu plus haute */
+    }
+
+    .image-container img {
+      width: 100%;
       height: auto;
-      filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.8));
+      border-radius: 10px;
+      display: block;
+      position: relative;
     }
 
-    .text {
-      font-size: 2.5rem;
-      color: white;
-      text-align: center;
-      margin-top: 10px;
-      font-weight: 500;
+    .text-sub {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      margin-top: 15px;
+      line-height: 1.4;
+      z-index: 3;
+      position: relative;
     }
 
-    .subtext {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      .image {
-        width: 85%;
-        max-width: 320px;
-        filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.9));
-      }
-
-      .text {
-        font-size: 2rem;
-        margin-top: 12px;
-      }
-
-      .subtext {
-        font-size: 0.85rem;
-      }
+    @media(min-width: 768px) {
+      .text-main { font-size: 10vw; top: 15%; }
+      .image-container { max-width: 800px; }
+      .text-sub { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
-  <h1 class="text">je t’aime</h1>
-  <img src="image.jpg" alt="amour" class="image">
-  <p class="subtext">pour toujours</p>
+  <div class="text-main">Je t’aime</div>
+
+  <div class="image-container">
+    <img src="octobre2024.png" alt="Octobre 2024">
+  </div>
+
+  <div class="text-sub">48°52'05.9"N 2°20'36.4"E</div>
 </body>
 </html>
